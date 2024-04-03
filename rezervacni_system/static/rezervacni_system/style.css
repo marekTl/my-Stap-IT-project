@@ -1,0 +1,220 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+span,
+.label,
+a,
+h1,
+h2,
+p,
+h3 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+h1,
+.section-text_p{
+    margin: 100px auto;
+}
+/* ----------------------   navigace ---------------------------- */
+li {
+    list-style-type: none;
+}
+    
+a {
+    text-decoration: none;
+    color: rgba(15, 35, 56, 1)
+}
+.brand {
+    margin-left: 10px;
+    font-size: 1rem;
+}
+
+.nav-link_img { 
+    width: 4%;
+    background-color: #FFFFFF;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:rgb(179, 177, 177);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    z-index: 999;/* Zajišťuje, že navigace bude vždy nad obsahem stránky */
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: azure;
+    height: 100%;
+    width: 100%;
+}
+.nav-item {
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.nav-link:hover {
+    color: rgb(29, 117, 210);
+}
+
+.navigation {
+    background-color:rgb(179, 177, 177);
+    position: fixed;
+    left: 100%; /* odjede navigace  do leva */
+    top: 60px; /* aby to bylo pod lištou */
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    transition: all .3s ease-in-out; /* zpomalení */
+}
+/* ------------------------- end navigace ------------------------------- */
+/* ------------------------- hamburger ------------------------- */
+.hamburger {
+    display: block;
+    /* objeví se hamburger */
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.bar {
+    background-color:rgb(23, 22, 22);
+    width: 24px;
+    height: 3px;
+    margin: 5px auto;
+    padding: 1.5px;
+}
+/* animace  */
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0; /* zmizí střední div, průhlednost */
+}
+
+.hamburger.active .bar:nth-child(1) {
+    rotate: 45deg;
+    translate: 0 8px;
+    /* x a y hodnota  */
+}
+
+.hamburger.active .bar:nth-child(3) {
+    rotate: -45deg;
+    translate: 0 -8px;
+}
+
+.navigation.active {
+    background-color: rgba(15, 35, 56, 1);
+    left: 5px;
+}
+
+/* ------------------------- end hamburger------------------------- */
+
+
+.section-action_h3,
+.section-action_p {
+    color: #FFFFFF;
+}
+
+
+
+img{
+    height: auto;
+    max-width: 100%;
+    border-radius: 50px;
+    
+  
+}
+
+.section-text {
+    margin: 15% auto;
+    width:90%;
+}
+/* ___________________________________section: action _________________________*/
+.section-action {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-action_sportEvent {
+    background-color: #1379C1;
+}
+
+.section-action_camps {
+    background-color: #EDA573;
+}
+
+.section-action_frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    width: 90%;
+    height: 150px;
+    border-radius: 10px;
+    margin: 5% auto;
+}
+h1{
+    color:#EDA573;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.section-action_a {
+    display: block;
+    width:100%;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@media (min-width: 768px) {
+
+    img {
+        width: 100%; 
+        height: auto;  
+    }
+
+    h1{
+    margin: 15% auto;
+    }
+
+    .nav-link_img {
+    width: 24px;
+    }
+    .section-text_h1 {
+    font-size: 2rem;
+    }
+
+    .section-text_p {
+    font-size: 18px;
+    }
+
+    .section-action {
+    display: flex;
+    flex-direction: row;
+    }
+
+    .hamburger {
+    display: none;
+    }
+    .nav-link {
+    color: rgba(15, 35, 56, 1);
+    }
+    .navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    width: 50%;
+    height: 60px;
+    align-items: center;
+    top: 0; /* posune zpět položky */
+    left: 0;
+    }
+}

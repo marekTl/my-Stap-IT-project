@@ -1,0 +1,47 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block title %} Úvod {% endblock %}
+    
+{% block css %}
+<link rel="stylesheet" href="{% static "rezervacni_system/style.css" %}">
+{% endblock %}
+
+{% block hlavni %}
+    <section>
+        <div class="section-text">
+            <div class="section-text_item">
+                <h1 class="section-text_h1">Víkendové sportovní akce a příměstské tábory v Praze</h1>
+            </div>
+            <div>
+                <img src="{% static "rezervacni_system/tri-kluci.jpg" %}" alt="">
+            </div>
+            <div class="section-text_item">
+                <p class="section-text_p">Naše víkendové sportovní akce jsou zaměřené na to, aby si děti
+                    vyzkoušely více sportů - některé z nich i netradiční. Soustředíme se na to, aby děti program nadchnul a
+                    motivoval k pohybu. Hlavní myšlenkou a cílem je radost, pestrost a zábava.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-action">
+        <a class= "section-action_a" href="{% url "prihlaska" %}">
+            <div class= "section-action_frame section-action_sportEvent">
+                <h3 class="section-action_h3">víkendové sportovní akce</h3>
+                <p class="section-action_p">pro děti 6 - 13 let</p>
+            </div>
+        </a>     
+        <a class= "section-action_a" href="{% url 'prihlaska' %}">
+            <div class="section-action_frame section-action_camps">
+                <h3 class="section-action_h3">příměstské tábory</h3>
+                <p class="section-action_p">pro děti 6 - 13 let</p>
+            </div>
+        </a> 
+    </section>
+{% endblock %}
+
+{% block js %}
+<script src="{% static "rezervacni_system/script.js" %}"></script>
+{% endblock%}
+   
+

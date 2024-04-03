@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&family=Poppins&display=swap"
+        rel="stylesheet">
+        
+    {% block css %} {% endblock %}
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="" class="brand">DĚTI & SPORT</a>
+            <ul class="navigation">
+                <li class="nav-item"><a href="{% url "uvod" %}" class="nav-link">DOMU</a></li>
+                <li class="nav-item"><a href="" class="nav-link">AKTUALITY</a></li>
+                <li class="nav-item"><a href="" class="nav-link">KONTAKT</a></li>
+                <li class="nav-item"><a href="https://www.facebook.com/profile.php?id=61553418650850"
+                        class="nav-link"><img class="nav-link_img" src="{% static "rezervacni_system/facebook.png" %}"
+                            alt="facebook"></a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+    {% block hlavni %} {% endblock %}
+    {% block js %} {% endblock%}
+</body>
+</html>

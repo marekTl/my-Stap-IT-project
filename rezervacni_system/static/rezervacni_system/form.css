@@ -1,0 +1,116 @@
+/* reset okrajů */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+span,
+.label,
+a,
+h1,
+h2,
+p,
+h3 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+    
+h1{
+    margin: 100px auto;
+}
+    /* --------------------------base css-------------------------------- */
+fieldset {
+    border: none;
+    text-align: center;
+    background-color: #1379C1;
+    margin: 5px;
+    border-radius: 5px;
+    padding-top: 45px;
+    padding-bottom: 45px; 
+}
+
+.errors {
+    display: none;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+    justify-content: center;
+}
+
+.form-widget,
+.form-widget_alergie,
+.form-widget_poznamka{
+    width: 75%;
+    height: 32px;
+    border-radius: 4px;
+    border: none;
+    padding-left: 10px;
+}
+.form-widget_alergie{
+    height: 50px;
+}
+.form-widget_poznamka{
+    height: 100px;
+}
+
+button {
+    display: grid;
+    justify-self: center; 
+    align-self: center;
+    background-color: #EDA573; 
+    width: 90%;
+    height: 100%;
+    border-radius: 4px;
+    border: none;
+} 
+
+button span {
+    height: 100%;
+    color: azure;
+    font-size: 20px;
+    margin-top: 9px; 
+    cursor: pointer;
+    align-self: center;
+}
+
+.label{
+    color: azure;
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    h1{
+        margin: 15% auto;
+    }
+  
+    form{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+ @media (min-width: 1024px) {
+
+    form{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+   
+    .grid-container{
+        grid-template-columns: 1fr 2fr;
+        grid-row-gap: 30px;
+    }
+
+   .grid-container_registrovat {
+        grid-column: span 2; 
+    } 
+ }

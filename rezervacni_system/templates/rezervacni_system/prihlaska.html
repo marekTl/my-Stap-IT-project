@@ -1,0 +1,74 @@
+{% extends "./base.html" %}
+{% load static %}
+
+    {% block title %}registrace {% endblock %}
+    
+    {% block css %}
+    <link rel="stylesheet" href="{% static "rezervacni_system/form.css" %}">
+    <link rel="stylesheet" href="{% static "rezervacni_system/style.css" %}">
+    {% endblock %}
+    
+    {% block hlavni %}
+    <h1>Registrace na sportovní akci</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <fieldset class=" grid-container form-fieldset_rodic">
+                {% for field in rodic_form %}
+            <div class="label {% if field.label == "Jméno rodiče" %}
+                      label-parent-name
+                   {% elif field.label == "Přijmení rodiče" %}
+                      label-parent-surname
+                   {% elif field.label == "Bydliště" %}
+                      label-address
+                   {% elif field.label == "Email" %}
+                      label-email
+                   {% elif field.label == "Telefon" %}
+                      label-phone
+                   {% endif %}" lang="cs">
+                    {{ field.label_tag }}
+            </div>
+            <div>
+                    {{ field }}
+            </div>
+            <div class="errors">
+                    {{ field.errors }}
+            </div>
+        {% endfor %}
+        </fieldset>
+        <fieldset class=" grid-container form-fieldset_dite">
+                {% comment %} <legend class="legend-container"><span class="grid-container_span">Dítě</span></legend> {% endcomment %}
+
+                {% for field in dite_form %}
+            <div class="label{% if field.label == "Jméno" %}
+                        label-child-name
+                    {% elif field.label == "Příjmení" %}
+                    label-child-surname
+                    {% elif field.label == "Věk" %}
+                    label-child-year
+                    {% elif field.label == "Alergie" %}
+                    label-child-allergy
+                    {% elif field.label == "Poznámka" %}
+                    label-note
+                    {% elif field.label == "Vyberte sprtovní akci" %}
+                    label-sport-evant
+                    {%endif%}" lang="cs">
+                        {{ field.label_tag }}
+                    </div>
+                    <div class="grid-item">
+                        {{ field }}
+                    </div>
+                    <div class="errors">
+                        {{ field.errors }}
+                    </div>
+                {% endfor %}
+            </div>
+            <button class="grid-container_registrovat"><span>REGISTROVAT</span></button>
+        </fieldset>
+    </form>
+{% endblock %}
+
+{% block js %}
+<script src="{% static "rezervacni_system/script.js" %}"></script>
+{% endblock%}
+
